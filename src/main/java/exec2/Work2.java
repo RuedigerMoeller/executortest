@@ -5,7 +5,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executor;
 
 /**
- * Created by moelrue on 10/13/14.
+ * Created by ruedi on 10/13/14.
  */
 public class Work2 {
 

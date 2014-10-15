@@ -7,7 +7,7 @@ import static exec2.Runner2.Mode.FixedThread;
 import static exec2.Runner2.Mode.WorkStealing;
 
 /**
- * Created by moelrue on 10/13/14.
+ * Created by ruedi on 10/13/14.
  */
 public class Runner2 {
 
