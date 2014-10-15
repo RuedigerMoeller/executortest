@@ -48,7 +48,7 @@ public class Runner2 {
         return this;
     }
 
-    static int memAcc = 50;
+    static int memAcc = 100;
     public long run(int iter) throws InterruptedException {
         long tim = System.currentTimeMillis();
         CountDownLatch finSignal = new CountDownLatch(workers.length);
