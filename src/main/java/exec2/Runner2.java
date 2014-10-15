@@ -8,6 +8,9 @@ import static exec2.Runner2.Mode.WorkStealing;
 
 /**
  * Created by ruedi on 10/13/14.
+ *
+ * Note this test does not make sense for machines with less then 8 cores (L1 cache misses will not be significant)
+ * However with MAX_WORKER = 4, cache effects still show up, but to a lesser extent
  */
 public class Runner2 {
 

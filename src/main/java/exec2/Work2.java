@@ -25,8 +25,10 @@ public class Work2 {
             localState[index] = i;
         }
         if ( countDown > 0 ) {
+            // submit next message
             executor.execute( () -> doWork(iterations,executor,countDown-1,latch) );
         } else {
+            // finished
             latch.countDown();
         }
         return sum;
