@@ -45,12 +45,15 @@ public class Runner2 {
                                     new ArrayBlockingQueue<Runnable>(10000)));
 
             }
+            Executors.newSingleThreadScheduledExecutor()
         }
         switch (mode) {
             case WorkStealing:
                 ex = Executors.newWorkStealingPool(MAX_WORKER); break;
             case FixedThread:
-                ex  = Executors.newFixedThreadPool(MAX_WORKER); break;
+                ex  = new ThreadPoolExecutor(MAX_WORKER, MAX_WORKER,
+                                      0L, TimeUnit.MILLISECONDS,
+                                      new ArrayBlockingQueue<Runnable>(100000));
         }
         return this;
     }
