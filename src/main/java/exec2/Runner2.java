@@ -40,7 +40,10 @@ public class Runner2 {
         for (int i = 0; i < workers.length; i++) {
             workers[i] = new Work2(localSize);
             if ( mode == Mode.Dedicated && i < MAX_WORKER ) {
-                threads[i] = Executors.newFixedThreadPool(1);
+                threads[i] = (new ThreadPoolExecutor(1, 1,
+                                    0L, TimeUnit.MILLISECONDS,
+                                    new ArrayBlockingQueue<Runnable>(10000)));
+
             }
         }
         switch (mode) {
@@ -85,10 +88,11 @@ public class Runner2 {
 
     private static long avgTest(Mode mode, int localSize ) throws InterruptedException {
         long sum = 0;
+        System.gc();
         Runner2 runner = new Runner2(mode).init(localSize);
         int iters = 1;
         for (int i = 0; i < iters; i++) {
-            sum += runner.run(1000 * 1000 * 5);
+            sum += runner.run(1000 * 1000 * 1);
 //            Thread.sleep(1000);
         }
 //        System.out.println();
