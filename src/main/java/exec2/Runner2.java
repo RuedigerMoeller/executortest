@@ -92,7 +92,7 @@ public class Runner2 {
         Runner2 runner = new Runner2(mode).init(localSize);
         int iters = 1;
         for (int i = 0; i < iters; i++) {
-            sum += runner.run(1000 * 1000 * 1);
+            sum += runner.run(1000 * 1000 * 5);
 //            Thread.sleep(1000);
         }
 //        System.out.println();
