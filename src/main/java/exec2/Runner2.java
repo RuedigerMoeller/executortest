@@ -23,6 +23,7 @@ public class Runner2 {
 
     final static int MAX_WORKER = 8;
     static final int NUM_ACTORS_PER_WORKER = 10;
+    static int memAcc = 100;
 
     Work2 workers[] = new Work2[MAX_WORKER*NUM_ACTORS_PER_WORKER]; // 10 actors per thread
 
@@ -51,7 +52,6 @@ public class Runner2 {
         return this;
     }
 
-    static int memAcc = 100;
     public long run(int iter) throws InterruptedException {
         long tim = System.currentTimeMillis();
         CountDownLatch finSignal = new CountDownLatch(workers.length);
@@ -99,7 +99,14 @@ public class Runner2 {
     }
 
     public static void main(String arg[]) throws InterruptedException {
-        int sizes[] = { 16, 64, 500, 1000, 8000, 80000 };
+        int sizes[] = {
+                16,
+                64,
+                500,
+                1000,
+                8000,
+                80000
+        };
         long durations[][] = new long[sizes.length][];
         for (int i = 0; i < sizes.length; i++) {
             int size = sizes[i];
