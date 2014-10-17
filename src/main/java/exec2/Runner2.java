@@ -45,7 +45,6 @@ public class Runner2 {
                                     new ArrayBlockingQueue<Runnable>(10000)));
 
             }
-            Executors.newSingleThreadScheduledExecutor()
         }
         switch (mode) {
             case WorkStealing:
