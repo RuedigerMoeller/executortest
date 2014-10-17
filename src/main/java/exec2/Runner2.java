@@ -39,7 +39,7 @@ public class Runner2 {
         for (int i = 0; i < workers.length; i++) {
             workers[i] = new Work2(localSize);
             if ( mode == Mode.Dedicated && i < MAX_WORKER ) {
-                threads[i] = Executors.newSingleThreadScheduledExecutor();
+                threads[i] = Executors.newFixedThreadPool(1);
             }
         }
         switch (mode) {
